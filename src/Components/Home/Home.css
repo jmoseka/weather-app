@@ -1,0 +1,33 @@
+.main-head {
+    padding: 1rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.region {
+    padding: 0;
+    margin: 0;
+    line-height: 3rem;
+    color: red;
+    font-size: 2.3rem;
+}
+.date {
+    padding: 0;
+    margin: 0;
+    line-height: 2rem;
+    font-size: 1.8rem;
+}
+
+.search-box {
+    align-self: center;
+    width: 80%;
+}
+
+.search-input {
+    padding: 0.6rem 0rem 0.6rem 0rem;
+    outline: 0;
+    border-radius: 5px;
+    width: 100%;
+    
+}
