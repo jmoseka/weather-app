@@ -9,7 +9,7 @@ export const getData = (payload) => ({
   payload,
 });
 
-export const fetchBook = () => async () => {
+export const fetchData = () => async () => {
   const response = await axios.get(url);
   const data = await response.data;
   console.log(data);

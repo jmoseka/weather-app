@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Card.css';
 import { WiHumidity } from 'react-icons/wi';
 import { FaTemperatureHigh } from 'react-icons/fa';
 import { RiWindyFill } from 'react-icons/ri';
 import { BsSunrise, BsSunset } from 'react-icons/bs';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchData } from '../../../Redux/Weather';
 
 function Card() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchData);
+  }, []);
+
+  const state = useSelector((state) => state);
+  console.log(state);
+
   return (
     <div>
       <div className="card">
