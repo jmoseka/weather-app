@@ -1,0 +1,63 @@
+.card {
+    border: 1px solid black;
+    margin-top: 2rem;
+}
+
+.weather-list {
+    list-style: none;
+    padding: 0;
+}
+
+/*card weather list icons and text*/
+.weather-list li {
+    display: flex;
+    align-items: center;
+}
+
+.weather-list li p {
+    margin: 0 0 0 0.2rem;
+    font-size: 1.05rem;
+}
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    
+}
+
+/* Sunrise and sunset group*/
+.sun-display {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.sunrise, .sunset {
+    width: 50%;
+    text-align: center;
+    border: 1px solid black;
+    padding: 1rem;
+    margin-bottom: 2px;
+}
+
+.sunrise p, .sunset p {
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+/*styling cities*/
+.cities {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem 0 2rem 0;
+}
+
+.card-country {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 47%;
+    height: 5rem;
+    border: 1px solid black;
+}
