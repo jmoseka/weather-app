@@ -34,6 +34,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 2rem 0 2rem 0;
+    cursor: pointer;
 }
 
 .card-country {

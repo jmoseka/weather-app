@@ -9,21 +9,20 @@ export const getCities = (payload) => ({
   payload,
 });
 
-export const fetchCity = () => async () => {
+export const fetchCity = () => async (dispatch) => {
   const response = await axios.get(url);
   const data = await response.data;
-  console.log(data);
-  /* const weatherData = [];
-    Object.entries(data).forEach((el) => {
-      weatherData.push({
-        item_id: el[0],
-        ...el[1][0],
+  const cities = [];
+  try {
+    data.forEach((el) => {
+      cities.push({
+        capital: el.capital[0],
       });
     });
-    dispatch(getBook(books));
+    dispatch(getCities(cities));
   } catch (error) {
     <h2>{error}</h2>;
-  } */
+  }
 };
 
 export default function cityReducer(state = [], action) {

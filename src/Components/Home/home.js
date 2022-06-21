@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { FaGlobeAfrica } from 'react-icons/fa';
 import './Home.css';
+import { fetchCity } from '../../Redux/Cities';
 
 function Home() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCity());
+  }, []);
+
+  const cityData = useSelector((state) => state.cityData);
+  console.log(cityData);
+
   return (
     <div className="home">
 
@@ -21,24 +31,13 @@ function Home() {
       </div>
 
       <section className="cities">
-        <div className="card-country">
-          Kamplala
-        </div>
-        <div className="card-country">
-          Dar-Es-Salaam
-        </div>
-        <div className="card-country">
-          Kigali
-        </div>
-        <div className="card-country">
-          Bunjumbura
-        </div>
-        <div className="card-country">
-          Kinshasa
-        </div>
-        <div className="card-country">
-          Addis Ababa
-        </div>
+        {
+        cityData.map((data) => (
+          <div key={data.capital} className="card-country">
+            {data.capital}
+          </div>
+        ))
+        }
       </section>
     </div>
   );
