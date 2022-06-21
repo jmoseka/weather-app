@@ -5,12 +5,12 @@ import { FaTemperatureHigh } from 'react-icons/fa';
 import { RiWindyFill } from 'react-icons/ri';
 import { BsSunrise, BsSunset } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchData } from '../../../Redux/Weather';
+import { fetchData } from '../../../../Redux/Weather';
 
 function Card() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchData);
+    dispatch(fetchData());
   }, []);
 
   const state = useSelector((state) => state);
@@ -50,27 +50,6 @@ function Card() {
 
         </div>
       </div>
-
-      <section className="cities">
-        <div className="card-country">
-          Kamplala
-        </div>
-        <div className="card-country">
-          Dar-Es-Salaam
-        </div>
-        <div className="card-country">
-          Kigali
-        </div>
-        <div className="card-country">
-          Bunjumbura
-        </div>
-        <div className="card-country">
-          Kinshasa
-        </div>
-        <div className="card-country">
-          Addis Ababa
-        </div>
-      </section>
     </div>
   );
 }

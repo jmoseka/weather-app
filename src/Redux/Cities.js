@@ -1,15 +1,15 @@
 import axios from 'axios';
 
-const GET_DATA = 'weather-app/weatherReducer/getData';
+const GET_CITY = 'weather-app/cityReducer/getCities';
 
-const url = 'https://api.openweathermap.org/data/2.5/onecall?lat=1.2921&lon=36.8219&exclude=hourly&appid=5709f5315143352b497276f1f19fb6bc';
+const url = 'https://restcountries.com/v3.1/region/africa';
 
-export const getData = (payload) => ({
-  type: GET_DATA,
+export const getCities = (payload) => ({
+  type: GET_CITY,
   payload,
 });
 
-export const fetchData = () => async () => {
+export const fetchCity = () => async () => {
   const response = await axios.get(url);
   const data = await response.data;
   console.log(data);
@@ -26,9 +26,9 @@ export const fetchData = () => async () => {
   } */
 };
 
-export default function weatherReducer(state = [], action) {
+export default function cityReducer(state = [], action) {
   switch (action.type) {
-    case GET_DATA:
+    case GET_CITY:
       return action.payload;
     default:
       return state;

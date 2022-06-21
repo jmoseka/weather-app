@@ -44,20 +44,3 @@
     font-size: 1.05rem;
     margin: 0;
 }
-
-/*styling cities*/
-.cities {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 2rem 0 2rem 0;
-}
-
-.card-country {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 47%;
-    height: 5rem;
-    border: 1px solid black;
-}

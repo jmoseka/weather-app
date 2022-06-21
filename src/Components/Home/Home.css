@@ -1,23 +1,16 @@
 .home {
     padding: 1rem;
 }
-.main-head {
-    height: 10rem;
+
+.home-header {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 2rem;
 }
-.region {
-    padding: 0;
-    margin: 0;
-    line-height: 3rem;
-    font-size: 2.3rem;
-}
-.date {
-    padding: 0;
-    margin: 0;
-    line-height: 2rem;
-    font-size: 1.8rem;
+.header-logo, .header-text {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .search-box {
@@ -33,4 +26,21 @@
     border-radius: 5px;
     width: 70%;
     
+}
+
+/*styling cities*/
+.cities {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem 0 2rem 0;
+}
+
+.card-country {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 47%;
+    height: 5rem;
+    border: 1px solid black;
 }

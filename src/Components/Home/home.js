@@ -1,24 +1,45 @@
 import React from 'react';
-import Card from './WeatherCard/Card';
+import { FaGlobeAfrica } from 'react-icons/fa';
 import './Home.css';
 
 function Home() {
   return (
     <div className="home">
-      <div className="main-head">
-        <div className="main-time">
-          <div>
-            <h1 className="region">Nairobi</h1>
-            <h2 className="date">September 7</h2>
-          </div>
+
+      <div className="home-header">
+        <div className="header-logo">
+          <FaGlobeAfrica />
         </div>
-        <div className="search-box">
-          <input className="search-input" placeholder="Search city" />
+        <div className="header-text">
+          Africa
+          My weather update
         </div>
       </div>
 
-      <Card />
+      <div className="search-box">
+        <input className="search-input" placeholder="Search city" />
+      </div>
 
+      <section className="cities">
+        <div className="card-country">
+          Kamplala
+        </div>
+        <div className="card-country">
+          Dar-Es-Salaam
+        </div>
+        <div className="card-country">
+          Kigali
+        </div>
+        <div className="card-country">
+          Bunjumbura
+        </div>
+        <div className="card-country">
+          Kinshasa
+        </div>
+        <div className="card-country">
+          Addis Ababa
+        </div>
+      </section>
     </div>
   );
 }
