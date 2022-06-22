@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { FaGlobeAfrica } from 'react-icons/fa';
+import { GiAfrica } from 'react-icons/gi';
+import { BsArrowRightCircle } from 'react-icons/bs';
 import './Home.css';
 import { fetchCity } from '../../Redux/Cities';
 
@@ -17,12 +18,12 @@ function Home() {
     <div className="home">
 
       <div className="home-header">
-        <div className="header-logo">
-          <FaGlobeAfrica />
+        <div className="header-logo center">
+          <GiAfrica />
         </div>
         <div className="header-text">
-          Africa
-          My weather update
+          <p>My weather update</p>
+          <p>Africa</p>
         </div>
       </div>
 
@@ -31,13 +32,18 @@ function Home() {
       </div>
 
       <section className="cities">
-        {
+        <ul className="city-list">
+          {
         cityData.map((data) => (
-          <div key={data.capital} className="card-country">
-            {data.capital}
-          </div>
+          <li key={data.capital} className="card-country">
+            <p>
+              <BsArrowRightCircle />
+            </p>
+            <p>{data.capital}</p>
+          </li>
         ))
         }
+        </ul>
       </section>
     </div>
   );

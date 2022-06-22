@@ -1,16 +1,27 @@
 .home {
-    padding: 1rem;
+    color: white;
 }
 
 .home-header {
     display: flex;
-    padding: 2rem;
+    padding: 1rem;
 }
-.header-logo, .header-text {
-    width: 50%;
+.center{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.header-logo {
+    font-size: 6rem;
+    width: 40%;
+    color:  #9e315d;
+}
+
+
+.header-text p {
+    margin: 0;
 }
 
 .search-box {
@@ -18,30 +29,51 @@
     justify-content: center;
     align-content: center;
     width: 100%;
+    padding: 2rem 0 2rem 0;
+    background: #c54277;
 }
 
 .search-input {
-    padding: 0.6rem 0rem 0.6rem 0rem;
+    padding: 0.8rem 0rem 0.8rem 1rem;
     outline: 0;
     border-radius: 5px;
     width: 70%;
+    border: none;
     
 }
 
 /*styling cities*/
-.cities {
+.city-list {
+    background: #c54277;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 2rem 0 2rem 0;
+    padding: 1rem 0 1rem 0;
     cursor: pointer;
 }
 
+.city-list li:nth-child(odd) {
+    background: yellow;
+}
+
+.city-list li:nth-child(even) {
+    background: #ec4e8c;
+}
+
+
 .card-country {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 47%;
-    height: 5rem;
-    border: 1px solid black;
+    flex-direction: column;
+    justify-items: end;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 49%;
+    height: 6rem;
+    margin: 1px;
+}
+
+.card-country p {
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0.5rem;
 }
