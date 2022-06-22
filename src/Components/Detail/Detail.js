@@ -1,7 +1,10 @@
 import React from 'react';
+import { useLocation } from 'react-router';
 import Card from './WeatherCard/Card';
 
-function Detail(props) {
+function Detail() {
+  const location = useLocation();
+  const props = location.state;
   console.log('ths is props', props);
   return (
     <div className="detail-pg">

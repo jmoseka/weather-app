@@ -14,8 +14,6 @@ function Home() {
 
   const cityData = useSelector((state) => state.cityData);
 
-  console.log(cityData);
-
   return (
     <div className="home">
 
@@ -37,6 +35,7 @@ function Home() {
                   to="/detail"
                   key={data.capital}
                   className="card-country"
+                  state={data.capital}
                 >
                   <p>
                     <BsArrowRightCircle />
