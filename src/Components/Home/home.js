@@ -12,11 +12,11 @@ function Home() {
   }, []);
 
   const cityData = useSelector((state) => state.cityData);
+
   console.log(cityData);
 
   return (
     <div className="home">
-
       <div className="home-header">
         <div className="header-logo center">
           <GiAfrica />
