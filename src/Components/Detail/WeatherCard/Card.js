@@ -5,7 +5,7 @@ import { FaTemperatureHigh } from 'react-icons/fa';
 import { RiWindyFill } from 'react-icons/ri';
 import { BsSunrise, BsSunset } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchData } from '../../../../Redux/Weather';
+import { fetchData } from '../../../Redux/Weather';
 
 function Card() {
   const dispatch = useDispatch();

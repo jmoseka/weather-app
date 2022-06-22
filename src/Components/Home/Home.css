@@ -1,5 +1,6 @@
 .home {
     color: white;
+    background: #ec4e8d;
 }
 
 .home-header {
@@ -24,24 +25,6 @@
     margin: 0;
 }
 
-.search-box {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    padding: 2rem 0 2rem 0;
-    background: #c54277;
-}
-
-.search-input {
-    padding: 0.8rem 0rem 0.8rem 1rem;
-    outline: 0;
-    border-radius: 5px;
-    width: 70%;
-    border: none;
-    
-}
-
 /*styling cities*/
 .city-list {
     background: #c54277;
@@ -59,7 +42,6 @@
 .city-list li:nth-child(even) {
     background: #ec4e8c;
 }
-
 
 .card-country {
     display: flex;

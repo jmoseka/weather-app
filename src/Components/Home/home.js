@@ -27,10 +27,6 @@ function Home() {
         </div>
       </div>
 
-      <div className="search-box">
-        <input className="search-input" placeholder="Search city" />
-      </div>
-
       <section className="cities">
         <ul className="city-list">
           {
