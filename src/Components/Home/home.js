@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { GiAfrica } from 'react-icons/gi';
 import { BsArrowRightCircle } from 'react-icons/bs';
 import './Home.css';
+import { Link } from 'react-router-dom';
 import { fetchCity } from '../../Redux/Cities';
 
 function Home() {
@@ -17,6 +18,7 @@ function Home() {
 
   return (
     <div className="home">
+
       <div className="home-header">
         <div className="header-logo center">
           <GiAfrica />
@@ -30,17 +32,23 @@ function Home() {
       <section className="cities">
         <ul className="city-list">
           {
-        cityData.map((data) => (
-          <li key={data.capital} className="card-country">
-            <p>
-              <BsArrowRightCircle />
-            </p>
-            <p>{data.capital}</p>
-          </li>
-        ))
-        }
+              cityData.map((data) => (
+                <Link
+                  to="/detail"
+                  key={data.capital}
+                  className="card-country"
+                >
+                  <p>
+                    <BsArrowRightCircle />
+                  </p>
+                  <p>{data.capital}</p>
+                </Link>
+              ))
+            }
+
         </ul>
       </section>
+
     </div>
   );
 }

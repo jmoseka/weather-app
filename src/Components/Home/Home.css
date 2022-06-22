@@ -35,11 +35,16 @@
     cursor: pointer;
 }
 
-.city-list li:nth-child(odd) {
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.city-list a:nth-child(odd) {
     background: yellow;
 }
 
-.city-list li:nth-child(even) {
+.city-list a:nth-child(even) {
     background: #ec4e8c;
 }
 
