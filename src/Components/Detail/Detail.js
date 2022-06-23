@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux/es/exports';
 import { useLocation } from 'react-router';
 import { TiWeatherSunny } from 'react-icons/ti';
+import { useSelector } from 'react-redux';
 import { fetchData } from '../../Redux/Weather';
 
 import Card from './WeatherCard/Card';
@@ -9,12 +10,14 @@ import './Detail.css';
 
 function Detail() {
   const location = useLocation();
-  const props = location.state;
+  const { capital } = location.state;
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchData(props));
+    dispatch(fetchData(capital));
   }, []);
+  const weatherData = useSelector((state) => state.weatherData);
+  console.log(weatherData);
 
   return (
     <div className="detail-pg">
@@ -22,6 +25,7 @@ function Detail() {
         <h1 className="region">Nairobi</h1>
         <h2 className="date">September 7</h2>
       </div>
+      <p>The weather is broken clouds</p>
       <Card />
 
       <div className="weekly-update">

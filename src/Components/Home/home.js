@@ -35,7 +35,7 @@ function Home() {
                   to="/detail"
                   key={data.capital}
                   className="card-country"
-                  state={data.capital}
+                  state={{ country: data.country, capital: data.capital, flags: data.flags }}
                 >
                   <p>
                     <BsArrowRightCircle />

@@ -1,15 +1,12 @@
 import './Card.css';
+import React from 'react';
 import { WiHumidity } from 'react-icons/wi';
 import { FaTemperatureHigh } from 'react-icons/fa';
 import { RiWindyFill } from 'react-icons/ri';
 import { BsSunrise, BsSunset } from 'react-icons/bs';
 
-// import { useSelector } from 'react-redux';
-// import { fetchData } from '../../../Redux/Weather';
-
-function Card() {
-  // const state = useSelector((state) => state);
-  // console.log(state);
+function Card(props) {
+  console.log('card', props);
 
   return (
     <div>

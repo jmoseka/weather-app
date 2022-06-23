@@ -7,29 +7,42 @@ export const getData = (payload) => ({
   payload,
 });
 
-export const fetchData = (location) => async () => {
+export const fetchData = (location) => async (dispatch) => {
   const coodUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&i&appid=5709f5315143352b497276f1f19fb6bc`;
   const responseCord = await axios.get(coodUrl);
   const { lon, lat } = responseCord.data.coord;
-  console.log('name: ', responseCord.data.name, 'lon', lon, ' lat', lat);
-
   const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly&appid=5709f5315143352b497276f1f19fb6bc`;
   const response = await axios.get(url);
   const data = await response.data;
-  console.log(data);
+  const weatherData = [];
+  const obj = data;
+  const objDaily = obj.daily;
+  const daily = [];
 
-  /* try {
-    const weatherData = [];
-    Object.entries(data).forEach((el) => {
-      weatherData.push({
-        item_id: el[0],
-        ...el[1][0],
-      });
+  const {
+    // eslint-disable-next-line camelcase
+    dt, temp, humidity, wind_speed, sunrise, sunset,
+  } = obj.current;
+
+  objDaily.forEach((el) => {
+    daily.push({
+      min: el.temp.min,
+      max: el.temp.max,
+      main: el.weather[0].main,
+      desc: el.weather[0].description,
     });
-    dispatch(getBook(books));
-  } catch (error) {
-    <h2>{error}</h2>;
-  } */
+  });
+
+  weatherData.dt = dt;
+  weatherData.temp = temp;
+  weatherData.humidity = humidity;
+  // eslint-disable-next-line camelcase
+  weatherData.wind_speed = wind_speed;
+  weatherData.sunrise = sunrise;
+  weatherData.sunset = sunset;
+  weatherData.daily = daily;
+
+  dispatch(getData(weatherData));
 };
 
 export default function weatherReducer(state = [], action) {

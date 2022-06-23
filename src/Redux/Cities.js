@@ -16,6 +16,8 @@ export const fetchCity = () => async (dispatch) => {
   try {
     data.forEach((el) => {
       cities.push({
+        country: el.name.common,
+        flags: el.flags.png,
         capital: el.capital[0],
       });
     });
