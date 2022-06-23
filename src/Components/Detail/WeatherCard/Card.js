@@ -1,20 +1,15 @@
-import React, { useEffect } from 'react';
 import './Card.css';
 import { WiHumidity } from 'react-icons/wi';
 import { FaTemperatureHigh } from 'react-icons/fa';
 import { RiWindyFill } from 'react-icons/ri';
 import { BsSunrise, BsSunset } from 'react-icons/bs';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchData } from '../../../Redux/Weather';
+
+// import { useSelector } from 'react-redux';
+// import { fetchData } from '../../../Redux/Weather';
 
 function Card() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchData());
-  }, []);
-
-  const state = useSelector((state) => state);
-  console.log(state);
+  // const state = useSelector((state) => state);
+  // console.log(state);
 
   return (
     <div>
@@ -23,28 +18,28 @@ function Card() {
           <ul className="weather-list">
             <li>
               <div className="card-icon"><FaTemperatureHigh /></div>
-              <p>Temperature</p>
+              <p className="card-text">Temperature</p>
             </li>
             <li>
               <div className="card-icon"><WiHumidity /></div>
-              <p>Humidity</p>
+              <p className="card-text">Humidity</p>
 
             </li>
             <li className="card-icon">
               <div className="card-icon"><RiWindyFill /></div>
-              <p>Windy</p>
+              <p className="card-text">Windy</p>
 
             </li>
           </ul>
 
           <div className="sun-display">
             <div className="sunrise">
-              <p>Sunrise</p>
-              <BsSunrise />
+              <p className="sunrise-text">Sunrise</p>
+              <p className="sun-display-icon"><BsSunrise /></p>
             </div>
             <div className="sunset">
-              <p>Sunset</p>
-              <BsSunset />
+              <p className="sunrise-text">Sunset</p>
+              <p className="sun-display-icon"><BsSunset /></p>
             </div>
           </div>
 

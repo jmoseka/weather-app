@@ -1,22 +1,23 @@
 .card {
-    border: 1px solid black;
-    margin-top: 2rem;
+    margin: 1.6rem 0 0 0;
 }
 
 .weather-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 /*card weather list icons and text*/
 .weather-list li {
     display: flex;
     align-items: center;
+    padding: 0.2rem;
 }
 
 .weather-list li p {
     margin: 0 0 0 0.2rem;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
 }
 
 .card-icon {
@@ -26,21 +27,35 @@
     
 }
 
+
 /* Sunrise and sunset group*/
 .sun-display {
     display: flex;
     gap: 0.5rem;
+    margin-top: 2rem;
 }
 
 .sunrise, .sunset {
     width: 50%;
     text-align: center;
-    border: 1px solid black;
-    padding: 1rem;
+    padding: 0.9rem 0 0.9rem 0;
     margin-bottom: 2px;
 }
 
-.sunrise p, .sunset p {
-    font-size: 1.05rem;
+.sunrise {
+    background: #ff63a1;
+}
+
+.sunset {
+    background: #9e315d;
+}
+
+.sunrise-text, .sunrise-text {
     margin: 0;
+
+}
+
+.sun-display-icon {
+    margin: 0;
+    font-size: 2rem;
 }

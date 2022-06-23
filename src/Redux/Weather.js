@@ -2,18 +2,24 @@ import axios from 'axios';
 
 const GET_DATA = 'weather-app/weatherReducer/getData';
 
-const url = 'https://api.openweathermap.org/data/2.5/onecall?lat=1.2921&lon=36.8219&exclude=hourly&appid=5709f5315143352b497276f1f19fb6bc';
-
 export const getData = (payload) => ({
   type: GET_DATA,
   payload,
 });
 
-export const fetchData = () => async () => {
+export const fetchData = (location) => async () => {
+  const coodUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&i&appid=5709f5315143352b497276f1f19fb6bc`;
+  const responseCord = await axios.get(coodUrl);
+  const { lon, lat } = responseCord.data.coord;
+  console.log('name: ', responseCord.data.name, 'lon', lon, ' lat', lat);
+
+  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly&appid=5709f5315143352b497276f1f19fb6bc`;
   const response = await axios.get(url);
   const data = await response.data;
   console.log(data);
-  /* const weatherData = [];
+
+  /* try {
+    const weatherData = [];
     Object.entries(data).forEach((el) => {
       weatherData.push({
         item_id: el[0],

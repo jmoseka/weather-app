@@ -19,7 +19,6 @@ export const fetchCity = () => async (dispatch) => {
         capital: el.capital[0],
       });
     });
-    console.log(data);
     dispatch(getCities(cities));
   } catch (error) {
     <h2>{error}</h2>;
