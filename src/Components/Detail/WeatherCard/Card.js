@@ -1,7 +1,7 @@
 import './Card.css';
 import React from 'react';
 import { WiHumidity } from 'react-icons/wi';
-import { FaTemperatureHigh } from 'react-icons/fa';
+import { TbTemperatureCelsius } from 'react-icons/tb';
 import { RiWindyFill } from 'react-icons/ri';
 import { BsSunrise, BsSunset } from 'react-icons/bs';
 
@@ -17,7 +17,7 @@ function Card(props) {
         <div className="card-body-2">
           <ul className="weather-list">
             <li>
-              <div className="card-icon"><FaTemperatureHigh /></div>
+              <div className="card-icon"><TbTemperatureCelsius /></div>
               <p className="card-text">Temperature</p>
               <p>{temp}</p>
             </li>

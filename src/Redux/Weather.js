@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 
 const GET_DATA = 'weather-app/weatherReducer/getData';
 
@@ -26,14 +27,20 @@ export const fetchData = (location) => async (dispatch) => {
 
   const { description } = obj.current.weather[0];
 
-  objDaily.forEach((el) => {
-    daily.push({
-      min: el.temp.min,
-      max: el.temp.max,
-      main: el.weather[0].main,
-      desc: el.weather[0].description,
+  try {
+    objDaily.forEach((el) => {
+      daily.push({
+        min: el.temp.min,
+        max: el.temp.max,
+        id: uuidv4(),
+        main: el.weather[0].main,
+        desc: el.weather[0].description,
+        icon: el.weather[0].icon,
+      });
     });
-  });
+  } catch (error) {
+    <h2>{error}</h2>;
+  }
 
   weatherData.dt = dt;
   weatherData.temp = temp;
@@ -44,8 +51,11 @@ export const fetchData = (location) => async (dispatch) => {
   weatherData.sunset = sunset;
   weatherData.daily = daily;
   weatherData.desc = description;
-
-  dispatch(getData(weatherData));
+  try {
+    dispatch(getData(weatherData));
+  } catch (error) {
+    <h2>{error}</h2>;
+  }
 };
 
 export default function weatherReducer(state = [], action) {

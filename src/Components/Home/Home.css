@@ -40,12 +40,10 @@ a {
     color: white;
 }
 
-.city-list a:nth-child(odd) {
-    background: yellow;
-}
 
-.city-list a:nth-child(even) {
+.city-list a {
     background: #ec4e8c;
+    margin: 0.1rem;
 }
 
 .card-country {
@@ -54,7 +52,7 @@ a {
     justify-items: end;
     align-items: flex-end;
     justify-content: space-between;
-    width: 49%;
+    width: 45%;
     height: 6rem;
     margin: 1px;
 }

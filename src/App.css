@@ -18,7 +18,6 @@
   font-size: calc(10px + 2vmin);
   border: 1px solid black;
   text-align: left;
-  height: 100vh;
   background: #ec4e8c;
   display: flex;
   flex-direction: column;

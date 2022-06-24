@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux/es/exports';
 import { useLocation } from 'react-router';
-import { TiWeatherSunny } from 'react-icons/ti';
 import { useSelector } from 'react-redux';
 import { fetchData } from '../../Redux/Weather';
 
@@ -18,50 +17,41 @@ function Detail() {
   }, []);
   const weatherData = useSelector((state) => state.weatherData);
 
-  const { dt } = weatherData;
+  const {
+    dt, desc, daily,
+  } = weatherData;
 
   return (
     <div className="detail-pg">
       <div className="main-time">
-        <h1 className="region">Nairobi</h1>
+        <h1 className="region">{capital}</h1>
         <h2 className="date">{dt}</h2>
       </div>
-      <p>The weather is broken clouds</p>
+      <p className="weather-descs">{`The weather today is ${desc}`}</p>
       <Card props={weatherData} />
 
       <div className="weekly-update">
         <h3>Weekly Update</h3>
         <ul className="weeks">
-          <li>
-            <div className="weekly-group">
-              <p className="weekly-icon">
-                <TiWeatherSunny />
-              </p>
-              <p className="weekly-temp">
-                21C
-              </p>
-            </div>
+          { daily === undefined ? null
+            : daily.map((el) => (
+              <li key={el.id}>
 
-            <p className="day">
-              Monday
-            </p>
-          </li>
+                <div className="weekly-group">
+                  <div className="weekly-icon">
+                    <img src={`https://openweathermap.org/img/wn/${el.icon}.png`} alt="weather icon" />
+                  </div>
+                  <div className="weekly-temp">
+                    {(el.min) + (el.max) / 2}
+                  </div>
+                </div>
 
-          <li>
-            <div className="weekly-group">
-              <div className="weekly-icon">
-                <TiWeatherSunny />
-              </div>
-              <div className="weekly-temp">
-                21C
-              </div>
-            </div>
+                <div className="day">
+                  Monday
+                </div>
 
-            <div className="day">
-              Monday
-            </div>
-          </li>
-
+              </li>
+            ))}
         </ul>
       </div>
     </div>
