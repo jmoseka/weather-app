@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -21,11 +22,11 @@ export const fetchData = (location) => async (dispatch) => {
   const daily = [];
 
   const {
-    // eslint-disable-next-line camelcase
     dt, temp, humidity, wind_speed, sunrise, sunset,
   } = obj.current;
 
   const { description } = obj.current.weather[0];
+  const { timezone_offset } = obj;
 
   try {
     objDaily.forEach((el) => {
@@ -33,6 +34,7 @@ export const fetchData = (location) => async (dispatch) => {
         min: el.temp.min,
         max: el.temp.max,
         id: uuidv4(),
+        dt: el.dt,
         main: el.weather[0].main,
         desc: el.weather[0].description,
         icon: el.weather[0].icon,
@@ -51,6 +53,8 @@ export const fetchData = (location) => async (dispatch) => {
   weatherData.sunset = sunset;
   weatherData.daily = daily;
   weatherData.desc = description;
+  // eslint-disable-next-line camelcase
+  weatherData.timezone = timezone_offset;
   try {
     dispatch(getData(weatherData));
   } catch (error) {

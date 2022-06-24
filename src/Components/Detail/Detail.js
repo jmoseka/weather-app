@@ -18,37 +18,59 @@ function Detail() {
   const weatherData = useSelector((state) => state.weatherData);
 
   const {
-    dt, desc, daily,
+    dt, desc, daily, timezone,
   } = weatherData;
+
+  const dateObject = new Date(dt * 1000 - (timezone * 1000));
+
+  const getDay = (datetime) => {
+    const dayObject = new Date(datetime * 1000 - (timezone * 1000));
+    const day = dayObject.toLocaleString('en-US', { weekday: 'long' });
+    return day;
+  };
+  const month = dateObject.toDateString();
+
+  //* * Get temperature in degree celsious  */
+  const convertKelToCelcious = (a, b) => {
+    const min = parseInt(a, 10);
+    const max = parseInt(b, 10);
+    const avg = (min + max) / 2;
+    const result = (avg - 273.15);
+    const value = Math.trunc(result);
+    return value.toString();
+  };
 
   return (
     <div className="detail-pg">
       <div className="main-time">
         <h1 className="region">{capital}</h1>
-        <h2 className="date">{dt}</h2>
+        <h2 className="date">{`${month}`}</h2>
       </div>
       <p className="weather-descs">{`The weather today is ${desc}`}</p>
       <Card props={weatherData} />
 
       <div className="weekly-update">
-        <h3>Weekly Update</h3>
+        <h3 className="weekly-update-title">Weekly Update</h3>
         <ul className="weeks">
           { daily === undefined ? null
             : daily.map((el) => (
+
               <li key={el.id}>
 
                 <div className="weekly-group">
-                  <div className="weekly-icon">
-                    <img src={`https://openweathermap.org/img/wn/${el.icon}.png`} alt="weather icon" />
-                  </div>
-                  <div className="weekly-temp">
-                    {(el.min) + (el.max) / 2}
-                  </div>
+                  <img src={`https://openweathermap.org/img/wn/${el.icon}.png`} alt="weather icon" />
+                  <p className="weekly-desc">{el.desc}</p>
                 </div>
 
-                <div className="day">
-                  Monday
+                <div className="weekly-temp">
+                  <p>
+                    { convertKelToCelcious(el.min, el.max)}
+                  </p>
                 </div>
+
+                <p className="day">
+                  {getDay(el.dt)}
+                </p>
 
               </li>
             ))}

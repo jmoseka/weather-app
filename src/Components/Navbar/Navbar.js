@@ -8,9 +8,6 @@ function Navbar() {
   return (
     <div className="navbar">
       <p className="arrowback"><Link to="*"><IoIosArrowBack /></Link></p>
-      <div className="search-container">
-        <input className="search-input" placeholder="Search city" />
-      </div>
 
       <div className="nav-tools">
         <p className="microphone"><FaMicrophone /></p>
