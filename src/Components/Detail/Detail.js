@@ -17,16 +17,17 @@ function Detail() {
     dispatch(fetchData(capital));
   }, []);
   const weatherData = useSelector((state) => state.weatherData);
-  console.log(weatherData);
+
+  const { dt } = weatherData;
 
   return (
     <div className="detail-pg">
       <div className="main-time">
         <h1 className="region">Nairobi</h1>
-        <h2 className="date">September 7</h2>
+        <h2 className="date">{dt}</h2>
       </div>
       <p>The weather is broken clouds</p>
-      <Card />
+      <Card props={weatherData} />
 
       <div className="weekly-update">
         <h3>Weekly Update</h3>

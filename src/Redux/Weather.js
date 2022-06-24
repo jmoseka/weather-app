@@ -24,6 +24,8 @@ export const fetchData = (location) => async (dispatch) => {
     dt, temp, humidity, wind_speed, sunrise, sunset,
   } = obj.current;
 
+  const { description } = obj.current.weather[0];
+
   objDaily.forEach((el) => {
     daily.push({
       min: el.temp.min,
@@ -37,10 +39,11 @@ export const fetchData = (location) => async (dispatch) => {
   weatherData.temp = temp;
   weatherData.humidity = humidity;
   // eslint-disable-next-line camelcase
-  weatherData.wind_speed = wind_speed;
+  weatherData.windSpeed = wind_speed;
   weatherData.sunrise = sunrise;
   weatherData.sunset = sunset;
   weatherData.daily = daily;
+  weatherData.desc = description;
 
   dispatch(getData(weatherData));
 };
