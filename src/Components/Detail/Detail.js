@@ -47,41 +47,43 @@ function Detail() {
 
   return (
     <div className="detail-pg">
-      <div className="main-time">
-        <h1 className="region">{capital}</h1>
-        <h2 className="date">{`${month}`}</h2>
-      </div>
-      <p className="weather-descs">{`The weather now is ${desc}`}</p>
-      <Card props={weatherData} />
+      <div className="page">
+        <div className="main-time">
+          <h1 className="region">{capital}</h1>
+          <h2 className="date">{ month === undefined ? null : `${month}`}</h2>
+        </div>
+        <p className="weather-descs">{`The weather now is ${desc}`}</p>
+        <Card props={weatherData} />
 
-      <div className="weekly-update">
-        <h3 className="weekly-update-title">Weekly Update</h3>
-        <ul className="weeks">
-          { daily === undefined ? null
-            : daily.map((el) => (
+        <div className="weekly-update">
+          <h3 className="weekly-update-title">Weekly Update</h3>
+          <ul className="weeks">
+            { daily === undefined ? null
+              : daily.map((el) => (
 
-              <li key={el.id}>
+                <li key={el.id}>
 
-                <div className="weekly-group">
-                  <img src={`https://openweathermap.org/img/wn/${el.icon}.png`} alt="weather icon" />
-                  <p className="weekly-desc">{firstLetterUppercase(el.desc)}</p>
-                </div>
+                  <div className="weekly-group">
+                    <img src={`https://openweathermap.org/img/wn/${el.icon}.png`} alt="weather icon" />
+                    <p className="weekly-desc">{firstLetterUppercase(el.desc)}</p>
+                  </div>
 
-                <div className="weekly-temp">
-                  <p>
-                    { convertKelToCelcious(el.min, el.max)}
-                    {' '}
-                    C
+                  <div className="weekly-temp">
+                    <p>
+                      { convertKelToCelcious(el.min, el.max)}
+                      {' '}
+                      C
+                    </p>
+                  </div>
+
+                  <p className="day">
+                    {getDay(el.dt)}
                   </p>
-                </div>
 
-                <p className="day">
-                  {getDay(el.dt)}
-                </p>
-
-              </li>
-            ))}
-        </ul>
+                </li>
+              ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

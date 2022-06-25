@@ -5,7 +5,7 @@
 
 .home-header {
     display: flex;
-    padding: 1rem;
+    padding: 2rem;
 }
 .center{
     display: flex;
@@ -17,7 +17,7 @@
 .header-logo {
     font-size: 6rem;
     width: 40%;
-    color:  #9e315d;
+    color:  #
 }
 
 
@@ -58,7 +58,7 @@ a {
     justify-content: space-between;
     align-content: center;
     flex-direction: column;
-    width: 45%;
+    width: 40%;
     height: 10rem;
     background: #ec4e8c;
     padding-right: 0.5rem;

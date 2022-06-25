@@ -4,7 +4,13 @@ p {
 
 .detail-pg {
     color: white;
-    width: 95%;
+    width: 100%;
+    background: rgb(212,71,128);
+background: linear-gradient(190deg, rgba(212,71,128,1) 16%, rgba(158,49,93,1) 38%, rgba(31,29,54,1) 82%);
+}
+
+.page {
+    margin: 0 0.5rem 0 0.5rem;
 }
 
 .main-time h1, h2 {
