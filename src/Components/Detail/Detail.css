@@ -1,0 +1,106 @@
+p {
+  margin: 0;
+}
+
+.detail-pg {
+  color: white;
+  width: 100%;
+  background: rgb(212, 71, 128);
+  background: linear-gradient(190deg, rgba(212, 71, 128, 1) 16%, rgba(158, 49, 93, 1) 38%, rgba(31, 29, 54, 1) 82%);
+}
+
+.page {
+  margin: 0 1rem 0 1rem;
+}
+
+.main-time h1,
+h2 {
+  margin: 0;
+  font-family: 'Cabin', sans-serif;
+}
+
+.region {
+  font-size: 2.3rem;
+  padding: 1rem 0 1rem 0;
+}
+
+.date {
+  font-size: 1.3rem;
+}
+
+.desc-icon {
+  padding: 2rem 0 1rem 0;
+}
+
+.weather-descs {
+  font-size: 1.2rem;
+  text-align: center;
+  font-style: italic;
+  animation: myAnim 1s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(-250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.weather-icon {
+  text-align: center;
+}
+
+/* weekly update */
+
+.weekly-update-title {
+  margin: 2.4rem 0 0.4rem 0;
+  font-family: 'Cabin', sans-serif;
+}
+
+.weeks {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.weeks li {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0 0.5rem 0;
+  font-size: 1.13rem;
+}
+
+.weekly-group {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  flex: 1;
+}
+
+.weekly-temp {
+  flex: 1;
+  text-align: center;
+}
+
+.day {
+  flex: 1;
+  text-align: center;
+  padding-right: 0.5rem;
+  margin: 0;
+}
+
+.weekly-desc {
+  padding-right: 0.5rem;
+}
+
+.weeks li:nth-child(even) {
+  background: #9e315d;
+}

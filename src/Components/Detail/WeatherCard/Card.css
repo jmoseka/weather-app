@@ -1,0 +1,59 @@
+.weather-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* card weather list icons and text */
+.weather-list li {
+  display: flex;
+  align-items: center;
+  padding: 0.2rem;
+}
+
+.sun-display p {
+  font-size: 1.2rem;
+}
+
+.weather-list li p {
+  margin: 0 0 0 0.2rem;
+  font-size: 1.1rem;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+/* Sunrise and sunset group */
+.sun-display {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.sunrise,
+.sunset {
+  width: 50%;
+  text-align: center;
+  padding: 0.5rem 0 0.5rem 0;
+  margin-bottom: 2px;
+}
+
+.sunrise {
+  background: #ff63a179;
+}
+
+.sunset {
+  background: #8d2c53;
+}
+
+.sunrise-text {
+  margin: 0;
+}
+
+.sun-display-icon {
+  margin: 0;
+  font-size: 2rem;
+}

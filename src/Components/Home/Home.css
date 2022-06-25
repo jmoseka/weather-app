@@ -1,0 +1,143 @@
+.home {
+  color: white;
+  background: #ec4e8d;
+  width: 100%;
+}
+
+.home-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo {
+  width: 40%;
+  font-size: 8rem;
+  text-align: center;
+  color: #9e315d;
+}
+
+.header-text p {
+  margin: 0;
+}
+
+.header-text {
+  width: 50%;
+  font-family: 'Cabin', sans-serif;
+}
+
+.header-app-name {
+  font-size: 1.8rem;
+  align-self: center;
+  justify-self: center;
+}
+
+.header-country {
+  font-size: 1.4rem;
+}
+
+/* styling cities */
+.cities {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #9e315d;
+}
+
+input::placeholder {
+  color: #fff;
+}
+
+.search-city {
+  background: none;
+  width: 100%;
+  padding: 0.8rem 0 0.8rem 5rem;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.city-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+  margin: 0.5rem;
+}
+
+.card-country {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: column;
+  width: 45%;
+  height: 10rem;
+  background-color: #d35789;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+/* Scale up the ".box" */
+.card-country:hover {
+  transform: scale(1.03, 1.03);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card-country p {
+  margin: 0;
+}
+
+.detail-btn {
+  align-self: end;
+}
+
+.country-name {
+  align-self: center;
+  justify-self: center;
+  font-size: 1.3rem;
+}
+
+.country-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 50%;
+  height: 100%;
+  font-size: 1rem;
+}
+
+.flag-country {
+  align-self: flex-end;
+  display: inline-flex;
+  height: 1.5rem;
+}
+
+.img-flag {
+  height: 16px;
+  width: 16px;
+  display: flex;
+  align-items: flex-end;
+  margin-right: 0.2rem;
+}
+
+.img-flag img {
+  width: 100%;
+}
+
+.country-capital {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
