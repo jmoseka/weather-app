@@ -7,7 +7,7 @@ The weather updates is fetched from [Open Weather API](https://openweathermap.or
 ## DEMO
 <img src="./src/assets/demo-live.gif" alt="app-demo"/>
 
-## 🔴 [LIVE LINK](https://62b6fd206d2aa16f450cb35b--inspiring-arithmetic-347a25.netlify.app/*)
+## 🔴 [LIVE LINK](https://inspiring-arithmetic-347a25.netlify.app/)
 
 
 ## Project Features
