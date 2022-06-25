@@ -54,7 +54,7 @@ export const fetchData = (location) => async (dispatch) => {
     weatherData.timezone = timezone_offset;
     dispatch(getData(weatherData));
   } catch (error) {
-    console.log(error);
+    <h2>error</h2>;
   }
 };
 
