@@ -21,14 +21,6 @@ export const fetchData = (location) => async (dispatch) => {
   const objDaily = obj.daily;
   const daily = [];
 
-  const {
-    dt, temp, humidity, wind_speed, sunrise, sunset,
-  } = obj.current;
-
-  const { description, icon } = obj.current.weather[0];
-  const { timezone_offset } = obj;
-  console.log(obj.current);
-
   try {
     objDaily.forEach((el) => {
       daily.push({
@@ -45,17 +37,23 @@ export const fetchData = (location) => async (dispatch) => {
     <h2>{error}</h2>;
   }
 
+  const {
+    dt, temp, humidity, wind_speed, sunrise, sunset,
+  } = obj.current;
+
+  const { description, icon } = obj.current.weather[0];
+  const { timezone_offset } = obj;
+
   weatherData.dt = dt;
   weatherData.temp = temp;
   weatherData.humidity = humidity;
-  // eslint-disable-next-line camelcase
   weatherData.windSpeed = wind_speed;
   weatherData.sunrise = sunrise;
   weatherData.sunset = sunset;
   weatherData.daily = daily;
   weatherData.desc = description;
   weatherData.icon = icon;
-  // eslint-disable-next-line camelcase
+
   weatherData.timezone = timezone_offset;
   try {
     dispatch(getData(weatherData));
