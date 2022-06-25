@@ -37,13 +37,13 @@ function Card(props) {
             <li>
               <div className="card-icon"><WiHumidity /></div>
               <p className="card-text">Humidity</p>
-              <p>{humidity}</p>
+              <p>{`${humidity} %`}</p>
 
             </li>
             <li className="card-icon">
               <div className="card-icon"><RiWindyFill /></div>
               <p className="card-text">Windy</p>
-              <p>{windSpeed}</p>
+              <p>{ `${windSpeed} % metre/sec`}</p>
 
             </li>
           </ul>
