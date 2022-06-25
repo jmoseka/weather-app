@@ -8,14 +8,7 @@ import './Detail.css';
 
 function Detail() {
   const location = useLocation();
-  const capital = () => {
-    try {
-      const { capital } = location.state;
-      return capital;
-    } catch (error) {
-      return console.log(error);
-    }
-  };
+  const { capital } = location.state;
 
   const dispatch = useDispatch();
   useEffect(() => {
