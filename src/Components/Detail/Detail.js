@@ -22,15 +22,15 @@ function Detail() {
   } = weatherData;
 
   const dateObject = new Date(dt * 1000 - (timezone * 1000));
+  const month = dateObject.toDateString();
 
   const getDay = (datetime) => {
     const dayObject = new Date(datetime * 1000 - (timezone * 1000));
     const day = dayObject.toLocaleString('en-US', { weekday: 'long' });
     return day;
   };
-  const month = dateObject.toDateString();
 
-  //* * Get temperature in degree celsious  */
+  /* * Get temperature in degree celsious  */
   const convertKelToCelcious = (a, b) => {
     const min = parseInt(a, 10);
     const max = parseInt(b, 10);
@@ -40,13 +40,18 @@ function Detail() {
     return value.toString();
   };
 
+  const firstLetterUppercase = (str) => {
+    const capitalize = str.charAt(0).toUpperCase() + str.slice(1);
+    return capitalize;
+  };
+
   return (
     <div className="detail-pg">
       <div className="main-time">
         <h1 className="region">{capital}</h1>
         <h2 className="date">{`${month}`}</h2>
       </div>
-      <p className="weather-descs">{`The weather today is ${desc}`}</p>
+      <p className="weather-descs">{`The weather now is ${desc}`}</p>
       <Card props={weatherData} />
 
       <div className="weekly-update">
@@ -59,12 +64,14 @@ function Detail() {
 
                 <div className="weekly-group">
                   <img src={`https://openweathermap.org/img/wn/${el.icon}.png`} alt="weather icon" />
-                  <p className="weekly-desc">{el.desc}</p>
+                  <p className="weekly-desc">{firstLetterUppercase(el.desc)}</p>
                 </div>
 
                 <div className="weekly-temp">
                   <p>
                     { convertKelToCelcious(el.min, el.max)}
+                    {' '}
+                    C
                   </p>
                 </div>
 

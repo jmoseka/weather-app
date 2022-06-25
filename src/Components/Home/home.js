@@ -37,10 +37,17 @@ function Home() {
                   className="card-country"
                   state={{ country: data.country, capital: data.capital, flags: data.flags }}
                 >
-                  <p>
-                    <BsArrowRightCircle />
-                  </p>
-                  <p>{data.capital}</p>
+                  <p className="detail-btn"><BsArrowRightCircle /></p>
+
+                  <p className="country-name">{data.country.toUpperCase()}</p>
+
+                  <div className="flag-country">
+                    <div className="img-flag"><img src={data.flags} alt="flag" /></div>
+
+                    <p className="country-capital">{data.capital}</p>
+
+                  </div>
+
                 </Link>
               ))
             }
