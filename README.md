@@ -15,6 +15,11 @@ The weather updates is fetched from [Open Weather API](https://openweathermap.or
 - Displays list of countries, flag and capital city
 - Display weather updates of each countr's capital city
 
+## VIDEO
+
+A video description of the project 
+[Loom](https://www.loom.com/share/5bb93ae6722e474f81600b04dd7ee8ce)
+
 ## Built With 🔨
 
 - HTML
