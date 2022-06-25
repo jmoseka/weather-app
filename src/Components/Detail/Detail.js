@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux/es/exports';
 import { useLocation } from 'react-router';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from '../../Redux/Weather';
 
 import Card from './WeatherCard/Card';
@@ -9,7 +8,14 @@ import './Detail.css';
 
 function Detail() {
   const location = useLocation();
-  const { capital } = location.state;
+  const capital = () => {
+    try {
+      const { capital } = location.state;
+      return capital;
+    } catch (error) {
+      return console.log(error);
+    }
+  };
 
   const dispatch = useDispatch();
   useEffect(() => {

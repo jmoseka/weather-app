@@ -10,18 +10,18 @@ export const getData = (payload) => ({
 });
 
 export const fetchData = (location) => async (dispatch) => {
-  const coodUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&i&appid=5709f5315143352b497276f1f19fb6bc`;
-  const responseCord = await axios.get(coodUrl);
-  const { lon, lat } = responseCord.data.coord;
-  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly&appid=5709f5315143352b497276f1f19fb6bc`;
-  const response = await axios.get(url);
-  const data = await response.data;
-  const weatherData = [];
-  const obj = data;
-  const objDaily = obj.daily;
-  const daily = [];
-
   try {
+    const coodUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&i&appid=5709f5315143352b497276f1f19fb6bc`;
+    const responseCord = await axios.get(coodUrl);
+    const { lon, lat } = responseCord.data.coord;
+    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly&appid=5709f5315143352b497276f1f19fb6bc`;
+    const response = await axios.get(url);
+    const data = await response.data;
+    const weatherData = [];
+    const obj = data;
+    const objDaily = obj.daily;
+    const daily = [];
+
     objDaily.forEach((el) => {
       daily.push({
         min: el.temp.min,
@@ -33,32 +33,28 @@ export const fetchData = (location) => async (dispatch) => {
         icon: el.weather[0].icon,
       });
     });
-  } catch (error) {
-    <h2>{error}</h2>;
-  }
 
-  const {
-    dt, temp, humidity, wind_speed, sunrise, sunset,
-  } = obj.current;
+    const {
+      dt, temp, humidity, wind_speed, sunrise, sunset,
+    } = obj.current;
 
-  const { description, icon } = obj.current.weather[0];
-  const { timezone_offset } = obj;
+    const { description, icon } = obj.current.weather[0];
+    const { timezone_offset } = obj;
 
-  weatherData.dt = dt;
-  weatherData.temp = temp;
-  weatherData.humidity = humidity;
-  weatherData.windSpeed = wind_speed;
-  weatherData.sunrise = sunrise;
-  weatherData.sunset = sunset;
-  weatherData.daily = daily;
-  weatherData.desc = description;
-  weatherData.icon = icon;
+    weatherData.dt = dt;
+    weatherData.temp = temp;
+    weatherData.humidity = humidity;
+    weatherData.windSpeed = wind_speed;
+    weatherData.sunrise = sunrise;
+    weatherData.sunset = sunset;
+    weatherData.daily = daily;
+    weatherData.desc = description;
+    weatherData.icon = icon;
 
-  weatherData.timezone = timezone_offset;
-  try {
+    weatherData.timezone = timezone_offset;
     dispatch(getData(weatherData));
   } catch (error) {
-    <h2>{error}</h2>;
+    console.log(error);
   }
 };
 

@@ -12,7 +12,8 @@
 }
 
 .App {
-  width: 50vw;
+  width: 100vw;
+  min-width: 500px;
   font-size: calc(10px + 2vmin);
   border: 1px solid black;
   text-align: left;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { GiAfrica } from 'react-icons/gi';
 import { BsArrowRightCircle } from 'react-icons/bs';
 import './Home.css';
@@ -42,7 +42,7 @@ function Home() {
                   to="/detail"
                   key={data.capital}
                   className="card-country"
-                  state={{ country: data.country, capital: data.capital, flags: data.flags }}
+                  state={data.capital === null ? '' : { country: data.country, capital: data.capital, flags: data.flags }}
                 >
                   <p className="detail-btn"><BsArrowRightCircle /></p>
 
