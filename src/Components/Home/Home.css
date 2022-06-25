@@ -74,6 +74,12 @@ a {
     padding-top: 0.5rem;
 }
 
+  /* Scale up the ".box" */
+.card-country:hover {
+    transform: scale(1.03, 1.03);
+    transition: opacity 0.3s ease-in-out;
+  }
+
 .card-country p {
     margin: 0;
 }

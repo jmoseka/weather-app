@@ -35,6 +35,19 @@ background: linear-gradient(190deg, rgba(212,71,128,1) 16%, rgba(158,49,93,1) 38
     font-size: 1.2rem;
     text-align: center;
     font-style: italic;
+    animation: myAnim 1s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 .weather-icon {
