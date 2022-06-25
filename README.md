@@ -18,7 +18,7 @@ The weather updates is fetched from [Open Weather API](https://openweathermap.or
 ## VIDEO
 
 A video description of the project 
-[Loom](https://www.loom.com/share/83aa82263c394f23b1243de889b72257)
+[Loom](https://www.loom.com/share/5bb93ae6722e474f81600b04dd7ee8ce)
 
 ## Built With 🔨
 
