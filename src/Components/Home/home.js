@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { GiAfrica } from 'react-icons/gi';
 import { BsArrowRightCircle } from 'react-icons/bs';
@@ -14,6 +14,9 @@ function Home() {
 
   const cityData = useSelector((state) => state.cityData);
 
+  const [postCity, setCity] = useState('');
+  const dataSearch = (str) => setCity(str);
+
   return (
     <div className="home">
 
@@ -28,9 +31,13 @@ function Home() {
       </div>
 
       <section className="cities">
+        <input className="search-city" type="text" placeholder="search city" onChange={(e) => dataSearch(e.target.value)} />
         <ul className="city-list">
           {
-              cityData.map((data) => (
+            cityData.filter((value) => value.country
+              .toLowerCase().includes(postCity
+                .toLocaleLowerCase()))
+              .map((data) => (
                 <Link
                   to="/detail"
                   key={data.capital}

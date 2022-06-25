@@ -45,6 +45,20 @@
   background: #9e315d;
 }
 
+input::placeholder {
+  color: #fff;
+}
+
+.search-city {
+  background: none;
+  width: 100%;
+  padding: 0.8rem 0 0.8rem 1rem;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
 .city-list {
   width: 100%;
   margin: 0;
