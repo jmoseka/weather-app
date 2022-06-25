@@ -10,11 +10,12 @@ background: linear-gradient(190deg, rgba(212,71,128,1) 16%, rgba(158,49,93,1) 38
 }
 
 .page {
-    margin: 0 0.5rem 0 0.5rem;
+    margin: 0 1rem 0 1rem;
 }
 
 .main-time h1, h2 {
     margin: 0;
+    font-family: 'Cabin', sans-serif;
 }
 
 .region {
@@ -26,16 +27,24 @@ background: linear-gradient(190deg, rgba(212,71,128,1) 16%, rgba(158,49,93,1) 38
     font-size: 1.3rem;
 }
 
+.desc-icon {
+    padding: 2rem 0 1rem 0;
+}
+
 .weather-descs {
-    padding: 0.8rem 0 0.8rem 0;
     font-size: 1.2rem;
     text-align: center;
     font-style: italic;
+}
+
+.weather-icon {
+    text-align: center;
 }
 /* weekly update*/
 
 .weekly-update-title {
     margin: 2.4rem 0 0.4rem 0;
+    font-family: 'Cabin', sans-serif;
 }
 
 .weeks {

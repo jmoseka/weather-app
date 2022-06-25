@@ -25,8 +25,9 @@ export const fetchData = (location) => async (dispatch) => {
     dt, temp, humidity, wind_speed, sunrise, sunset,
   } = obj.current;
 
-  const { description } = obj.current.weather[0];
+  const { description, icon } = obj.current.weather[0];
   const { timezone_offset } = obj;
+  console.log(obj.current);
 
   try {
     objDaily.forEach((el) => {
@@ -53,6 +54,7 @@ export const fetchData = (location) => async (dispatch) => {
   weatherData.sunset = sunset;
   weatherData.daily = daily;
   weatherData.desc = description;
+  weatherData.icon = icon;
   // eslint-disable-next-line camelcase
   weatherData.timezone = timezone_offset;
   try {

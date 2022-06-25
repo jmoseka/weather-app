@@ -1,48 +1,56 @@
 .home {
     color: white;
     background: #ec4e8d;
+    width: 100%;
 }
 
 .home-header {
+    width: 100%;
     display: flex;
-    padding: 2rem;
-}
-.center{
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .header-logo {
-    font-size: 6rem;
     width: 40%;
-    color:  #
+    font-size: 8rem;
+    text-align: center;
+    color:  #9e315d;
 }
-
 
 .header-text p {
     margin: 0;
 }
 
+.header-text {
+    width: 50%;
+    font-family: 'Cabin', sans-serif;
+}
+
+.header-app-name {
+    font-size: 1.8rem;
+    align-self: center;
+    justify-self: center;
+}
+
+.header-country {
+    font-size: 1.4rem;
+}
 /*styling cities*/
 .cities {
     width: 100%;
     margin: 0;
     padding: 0;
-    background: yellow;
+    background: #9e315d;
 }
 
 .city-list {
     width: 100%;
     margin: 0;
     padding: 0;
-    background: #c54277;
-    display: flex;
-    justify-content: space-evenly;
-    align-content: center;
-    flex-wrap: wrap;
     cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 a {
@@ -58,9 +66,9 @@ a {
     justify-content: space-between;
     align-content: center;
     flex-direction: column;
-    width: 40%;
+    width: 45%;
     height: 10rem;
-    background: #ec4e8c;
+    background-color: #d35789;
     padding-right: 0.5rem;
     padding-top: 0.5rem;
 }

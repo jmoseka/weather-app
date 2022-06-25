@@ -18,7 +18,7 @@ function Detail() {
   const weatherData = useSelector((state) => state.weatherData);
 
   const {
-    dt, desc, daily, timezone,
+    dt, desc, daily, timezone, icon,
   } = weatherData;
 
   const dateObject = new Date(dt * 1000 - (timezone * 1000));
@@ -52,7 +52,11 @@ function Detail() {
           <h1 className="region">{capital}</h1>
           <h2 className="date">{ month === undefined ? null : `${month}`}</h2>
         </div>
-        <p className="weather-descs">{`The weather now is ${desc}`}</p>
+
+        <div className="desc-icon">
+          <p className="weather-descs">{`The weather now is ${desc}`}</p>
+          <div className="weather-icon"><img src={`https://openweathermap.org/img/wn/${icon}.png`} alt="weather-icon" /></div>
+        </div>
         <Card props={weatherData} />
 
         <div className="weekly-update">

@@ -22,8 +22,8 @@ function Home() {
           <GiAfrica />
         </div>
         <div className="header-text">
-          <p>My weather update</p>
-          <p>Africa</p>
+          <h1 className="header-app-name">My Weather Update</h1>
+          <p className="header-country">AFRICA</p>
         </div>
       </div>
 
