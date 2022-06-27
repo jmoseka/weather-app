@@ -58,7 +58,7 @@ input::placeholder {
 }
 
 .search-icon {
-  margin-left: 0.5rem;
+  margin-left: 1rem;
 }
 
 .search-city {
@@ -83,6 +83,13 @@ input::placeholder {
   flex-wrap: wrap;
 }
 
+.city-list a:nth-child(4n-1) {
+  background: #b83c6e;
+}
+.city-list a:nth-child(4n-2) {
+  background: #b83c6e;
+}
+
 a {
   text-decoration: none;
   color: white;
@@ -97,7 +104,7 @@ a {
   flex-direction: column;
   width: 45%;
   height: 10rem;
-  background-color: #d35789;
+  background-color: #da4882;
   padding-right: 0.5rem;
   padding-top: 0.5rem;
 }
@@ -120,6 +127,8 @@ a {
   align-self: center;
   justify-self: center;
   font-size: 1.3rem;
+  color: white;
+  font-family: 'Cabin', sans-serif;
 }
 
 .country-desc {
