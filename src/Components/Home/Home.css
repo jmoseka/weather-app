@@ -8,7 +8,7 @@
 .home-header {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-content: center;
   justify-content: center;
 }
 
@@ -34,8 +34,28 @@
   justify-self: center;
 }
 
-.header-country {
+.align-center {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.continent-name {
   font-size: 1.4rem;
+}
+
+.change-badge {
+  padding: 5px;
+  border-radius: 5px;
+  margin:0 0 0 1rem;
+  background:#9e315d;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.change-badge:hover {
+  transform: scale(1.03, 1.03);
+  font-weight: bold;
 }
 
 /* styling cities */
@@ -165,6 +185,10 @@ a {
 }
 
 @media (max-width: 960px) {
+  .home-header {
+    padding: 0.5rem 0 0.5rem 0;
+  }
+
   .card-country {
     width: 42%;
   }
@@ -181,6 +205,11 @@ a {
   .country-name {
     font-size: 1rem;
   }
+
+  .search-icon {
+    margin-left: 1.5rem;
+  }
+  
 }
 
 @media (max-width: 600px) {

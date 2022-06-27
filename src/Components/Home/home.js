@@ -27,7 +27,13 @@ function Home() {
         </div>
         <div className="header-text">
           <h1 className="header-app-name">My Weather Update</h1>
-          <p className="header-country">AFRICA</p>
+          <div className="header-continent align-center">
+            <p className="continent-name">AFRICA</p>
+            <div className="change-badge">
+              <p className="change-continent">change</p>
+            </div>
+          </div>
+
         </div>
       </div>
 
