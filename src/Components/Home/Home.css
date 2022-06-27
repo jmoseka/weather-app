@@ -62,15 +62,20 @@ input::placeholder {
 }
 
 .search-city {
-  margin-left: 0.9rem;
-  background-color: yellow;
-  margin: 0;
+  margin-left: 0.2rem;
   background: none;
   width: 90%;
   border: none;
   outline: none;
   color: white;
   font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+  margin: 0.5rem;
 }
 
 .city-list {
@@ -86,15 +91,9 @@ input::placeholder {
 .city-list a:nth-child(4n-1) {
   background: #b83c6e;
 }
+
 .city-list a:nth-child(4n-2) {
   background: #b83c6e;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-  justify-content: center;
-  margin: 0.5rem;
 }
 
 .card-country {
@@ -169,6 +168,7 @@ a {
   .card-country {
     width: 42%;
   }
+
   .header-app-name {
     font-size: 1.6rem;
   }
@@ -177,7 +177,8 @@ a {
     font-size: 6rem;
   }
 
-  .search-city, .country-name {
+  .search-city,
+  .country-name {
     font-size: 1rem;
   }
 }
