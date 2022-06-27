@@ -164,3 +164,30 @@ a {
   padding: 0;
   font-size: 1rem;
 }
+
+@media (max-width: 960px) {
+  .card-country {
+    width: 42%;
+  }
+  .header-app-name {
+    font-size: 1.6rem;
+  }
+
+  .header-logo {
+    font-size: 6rem;
+  }
+
+  .search-city, .country-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-country {
+    width: 40%;
+  }
+
+  .header-app-name {
+    font-size: 1.5rem;
+  }
+}
