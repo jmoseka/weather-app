@@ -2,6 +2,7 @@
   color: white;
   background: #ec4e8d;
   width: 100%;
+  height: 100vh;
 }
 
 .home-header {
@@ -49,10 +50,23 @@ input::placeholder {
   color: #fff;
 }
 
-.search-city {
-  background: none;
+.search-box {
   width: 100%;
-  padding: 0.8rem 0 0.8rem 5rem;
+  padding: 0.5rem 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  margin-left: 0.5rem;
+}
+
+.search-city {
+  margin-left: 0.9rem;
+  background-color: yellow;
+  margin: 0;
+  background: none;
+  width: 90%;
   border: none;
   outline: none;
   color: white;
