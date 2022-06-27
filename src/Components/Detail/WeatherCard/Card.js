@@ -31,19 +31,19 @@ function Card(props) {
           <ul className="weather-list">
             <li>
               <div className="card-icon"><TbTemperatureCelsius /></div>
-              <p className="card-text">Temperature</p>
+              <p className="card-text">Temperature :</p>
               <p>{convertKelToCelcious(temp)}</p>
             </li>
             <li>
               <div className="card-icon"><WiHumidity /></div>
-              <p className="card-text">Humidity</p>
+              <p className="card-text">Humidity :</p>
               <p>{`${humidity} %`}</p>
 
             </li>
             <li className="card-icon">
               <div className="card-icon"><RiWindyFill /></div>
-              <p className="card-text">Windy</p>
-              <p>{ `${windSpeed} % metre/sec`}</p>
+              <p className="card-text">Wind Speed :</p>
+              <p>{ `${windSpeed} metre/sec`}</p>
 
             </li>
           </ul>

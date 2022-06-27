@@ -8,7 +8,7 @@ import './Detail.css';
 
 function Detail() {
   const location = useLocation();
-  const { capital } = location.state;
+  const { capital } = location.state === null ? '' : location.state;
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -31,6 +31,9 @@ function Detail() {
 
   /* * Get temperature in degree celsious  */
   const convertKelToCelcious = (a, b) => {
+    if (a === b || b === null) {
+      return '';
+    }
     const min = parseInt(a, 10);
     const max = parseInt(b, 10);
     const avg = (min + max) / 2;

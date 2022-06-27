@@ -22,11 +22,9 @@ A video description of the project
 
 ## Built With 🔨
 
-- HTML
-- CSS
-- JavaScript(ES6)
+- HTML - CSS - JavaScript(ES6)
 - React
-- Github
+- Redux
 
 ## Setup
 

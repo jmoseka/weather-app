@@ -2,6 +2,7 @@
   color: white;
   background: #ec4e8d;
   width: 100%;
+  height: 100vh;
 }
 
 .home-header {
@@ -49,14 +50,32 @@ input::placeholder {
   color: #fff;
 }
 
-.search-city {
-  background: none;
+.search-box {
   width: 100%;
-  padding: 0.8rem 0 0.8rem 5rem;
+  padding: 0.5rem 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  margin-left: 1rem;
+}
+
+.search-city {
+  margin-left: 0.2rem;
+  background: none;
+  width: 90%;
   border: none;
   outline: none;
   color: white;
   font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+  margin: 0.5rem;
 }
 
 .city-list {
@@ -69,11 +88,12 @@ input::placeholder {
   flex-wrap: wrap;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-  justify-content: center;
-  margin: 0.5rem;
+.city-list a:nth-child(4n-1) {
+  background: #b83c6e;
+}
+
+.city-list a:nth-child(4n-2) {
+  background: #b83c6e;
 }
 
 .card-country {
@@ -83,7 +103,7 @@ a {
   flex-direction: column;
   width: 45%;
   height: 10rem;
-  background-color: #d35789;
+  background-color: #da4882;
   padding-right: 0.5rem;
   padding-top: 0.5rem;
 }
@@ -106,6 +126,8 @@ a {
   align-self: center;
   justify-self: center;
   font-size: 1.3rem;
+  color: white;
+  font-family: 'Cabin', sans-serif;
 }
 
 .country-desc {
@@ -140,4 +162,33 @@ a {
   margin: 0;
   padding: 0;
   font-size: 1rem;
+}
+
+@media (max-width: 960px) {
+  .card-country {
+    width: 42%;
+  }
+
+  .header-app-name {
+    font-size: 1.6rem;
+  }
+
+  .header-logo {
+    font-size: 6rem;
+  }
+
+  .search-city,
+  .country-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-country {
+    width: 40%;
+  }
+
+  .header-app-name {
+    font-size: 1.5rem;
+  }
 }
